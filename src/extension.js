@@ -1350,7 +1350,7 @@ class DataClassGenerator {
     addEquatableDetails(clazz) {
         // Do not generate Equatable for class with 'Base' in their
         // names as Base classes should inherit from Equatable.
-        // see: https://github.com/Ricardo Emerson/Dart-Data-Class-Generator/issues/8
+        // see: https://github.com/ricardoemerson/dart-data-class-generator/issues/8
         if (clazz.hasSuperclass && clazz.superclass.includes('Base')) return;
 
         this.requiresImport('package:equatable/equatable.dart');
@@ -1468,7 +1468,7 @@ class DataClassGenerator {
             const linePos = i + 1;
             // Make sure to look for 'class ' with the space in order to allow
             // fields that contain the word 'class' as in classifire.
-            // issue: https://github.com/Ricardo Emerson/Dart-Data-Class-Generator/issues/2
+            // issue: https://github.com/ricardo-emerson/dart-data-class-generator/issues/2
             const classLine = line.trimLeft().startsWith('class ') || line.trimLeft().startsWith('abstract class ');
 
             if (classLine) {

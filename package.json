@@ -2,7 +2,7 @@
 	"name": "dart-data-class-generator",
 	"displayName": "Dart Data Class Generator",
 	"description": "Create dart data classes easily, fast and without writing boilerplate or running code generation.",
-	"publisher": "Ricardo Emerson",
+	"publisher": "ricardo-emerson",
 	"version": "0.5.5",
 	"engines": {
 		"vscode": "^1.65.0"
