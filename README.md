@@ -1,10 +1,10 @@
 # Dart Data Class Generator
 
-[![GitHub Stars](https://img.shields.io/github/stars/ricardoemerson/dart-data-class-generator.svg?logo=github)](https://github.com/ricardoemerson/dart-data-class-generator)
-[![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.dart-data-class-generator.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-generator)
-[![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.dart-data-class-generator.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-generator)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.dart-data-class-generator.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-generator)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.dart-data-class-generator.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-generator&ssr=false#review-details)
+[![GitHub Stars](https://img.shields.io/github/stars/ricardoemerson/dart-data-class-tools.svg?logo=github)](https://github.com/ricardoemerson/dart-data-class-tools)
+[![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.dart-data-class-generator.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-tools)
+[![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.dart-data-class-tools.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-tools)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.dart-data-class-tools.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-tools)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.dart-data-class-tools.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-tools&ssr=false#review-details)
 
 Create dart data classes easily, fast and without writing boilerplate or running code generation.
 
