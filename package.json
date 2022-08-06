@@ -1,5 +1,5 @@
 {
-	"name": "dart-data-class-generator",
+	"name": "dart-data-class-tools",
 	"displayName": "Dart Data Class Generator",
 	"description": "Create dart data classes easily, fast and without writing boilerplate or running code generation.",
 	"publisher": "ricardo-emerson",
