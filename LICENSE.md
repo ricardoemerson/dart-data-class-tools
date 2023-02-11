@@ -1,6 +1,8 @@
-MIT License
-
+VSCode extension Dart Data Class Generator
 Copyright (c) 2022 Ricardo Emerson
+All rights reserved.
+
+MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
