@@ -979,7 +979,7 @@ class DataClassGenerator {
                 constr += 'const ';
         }
 
-        constr += clazz.name + startBracket + '\n';
+        constr += '\n' + clazz.name + startBracket + '\n';
 
         // Add 'Key key,' for widgets in constructor.
         if (clazz.isWidget) {
