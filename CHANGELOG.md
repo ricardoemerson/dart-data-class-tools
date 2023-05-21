@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.5.8
+
+- Added new line between parameters and constructor after invoking `Generate constructor` action.
+
 ## 0.5.7
 
 - Updated the badges in README.md.
