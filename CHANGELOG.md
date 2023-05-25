@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.5.9
+
+- Removed the newline between parameters and constructor after invoking the `Generate constructor` action, because when adding new properties to the class a new blank line was being created and had to be deleted manually.
+
 ## 0.5.8
 
 - Added new line between parameters and constructor after invoking `Generate constructor` action.
