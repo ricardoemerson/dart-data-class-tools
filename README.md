@@ -12,7 +12,7 @@ Create dart data classes easily, fast and without writing boilerplate or running
 
 # What's new in Dart Data Class Generator 0.7.0 🎉
 
-- Update `List<Object> props = []` to `List<Object?> props = []` when any type of attribute has a nullable value.
+- Update `List<Object> props = []` to `List<Object?> props = []` when any type of attribute has a nullable value when generates Equatable.
 
 # What's new in Dart Data Class Generator 0.6.0 🎉
 
