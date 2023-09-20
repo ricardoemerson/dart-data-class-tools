@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.0
+
+- Update `List<Object> props = []` to `List<Object?> props = []` when any type of attribute has a nullable value when generates Equatable.
+
 ## 0.6.0
 
 - Added support for uses ValueGetter for nullable types when generates copyWith.

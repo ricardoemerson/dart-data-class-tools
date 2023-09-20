@@ -10,6 +10,10 @@ Create dart data classes easily, fast and without writing boilerplate or running
 
 > This project was forked from BendixMa Dart Data Class Generator at version 0.5.5
 
+# What's new in Dart Data Class Generator 0.7.0 🎉
+
+- Update `List<Object> props = []` to `List<Object?> props = []` when any type of attribute has a nullable value.
+
 # What's new in Dart Data Class Generator 0.6.0 🎉
 
 - Added support for uses `ValueGetter` for nullable types when generates copyWith.
