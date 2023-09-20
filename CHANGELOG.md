@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.0
+
+- Added support for uses ValueGetter for nullable types when generates copyWith.
+- Added the setting `copyWith.usesValueGetter` to enable/disable uses of ValueGetter for nullable types when generates copyWith.
+
+
 ## 0.5.7
 
 - Updated the badges in README.md.

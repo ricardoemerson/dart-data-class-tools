@@ -3,7 +3,7 @@
 	"displayName": "Dart Data Class Generator",
 	"description": "Create dart data classes easily, fast and without writing boilerplate or running code generation.",
 	"publisher": "ricardo-emerson",
-	"version": "0.5.7",
+	"version": "0.6.0",
 	"engines": {
 		"vscode": "^1.65.0"
 	},
@@ -45,7 +45,7 @@
 		],
 		"configuration": [
 			{
-				"title": "Dart Data Class Generator configuration",
+				"title": "Dart Data Class Generator",
 				"properties": {
 					"dart-data-class-generator.json.key_format": {
 						"type": "string",
@@ -210,6 +210,15 @@
 						],
 						"default": false,
 						"description": "If true, uses equatable for value equality and hashcode."
+					},
+					"dart-data-class-generator.copyWith.usesValueGetter": {
+						"type": "boolean",
+						"enum": [
+							true,
+							false
+						],
+						"default": true,
+						"description": "If true, uses ValueGetter for nullable types when generates copyWith."
 					}
 				}
 			}

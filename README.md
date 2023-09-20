@@ -10,6 +10,11 @@ Create dart data classes easily, fast and without writing boilerplate or running
 
 > This project was forked from BendixMa Dart Data Class Generator at version 0.5.5
 
+# What's new in Dart Data Class Generator 0.6.0 🎉
+
+- Added support for uses `ValueGetter` for nullable types when generates copyWith.
+- Added the setting `copyWith.usesValueGetter` to enable/disable uses of ValueGetter for nullable types when generates copyWith.
+
 ## Features
 
 The generator can generate the constructor, copyWith, toMap, fromMap, toJson, fromJson, toString, operator == and hashCode methods for a class based on [class properties](#create-data-classes-based-on-class-properties) or [raw JSON](#create-data-classes-based-on-json-beta).
@@ -103,6 +108,7 @@ json keys.
 * `dart-data-class-generator.override.manual`: If true, asks, when overriding a class (running the command on an existing class), for every single function/constructor that needs to be changed whether the generator should override the function or not. This allows you to preserve custom changes you made to the function/constructor that would be otherwise overwritten by the generator.
 * `dart-data-class-generator.constructor.enabled`: If true, generates a constructor for a data class.
 * `dart-data-class-generator.copyWith.enabled`: If true, generates a copyWith function for a data class.
+* `dart-data-class-generator.copyWith.usesValueGetter`: If true, uses ValueGetter for nullable types when generates copyWith.
 * `dart-data-class-generator.toMap.enabled`: If true, generates a toMap function for a data class.
 * `dart-data-class-generator.fromMap.enabled`: If true, generates a fromMap function for a data class.
 * `dart-data-class-generator.toJson.enabled`: If true, generates a toJson function for a data class.

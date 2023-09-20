@@ -1067,19 +1067,34 @@ class DataClassGenerator {
      * @param {DartClass} clazz
      */
     insertCopyWith(clazz) {
+        const usesValueGetter = readSetting('copyWith.usesValueGetter');
+        let addImportForValueGetter = false;
         let method = clazz.type + ' copyWith({\n';
         for (const prop of clazz.properties) {
-            method += `  ${prop.type}? ${prop.name},\n`;
+            if (usesValueGetter && prop.isNullable) {
+                if (!addImportForValueGetter) addImportForValueGetter = true;
+                method += `  ValueGetter<${prop.rawType}>? ${prop.name},\n`;
+            } else {
+                method += `  ${prop.type}? ${prop.name},\n`;
+            }
         }
         method += '}) {\n';
         method += `  return ${clazz.type}(\n`;
 
         for (let p of clazz.properties) {
-            method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} ?? this.${p.name},\n`;
+            if (usesValueGetter && p.isNullable) {
+                method += `    ${ clazz.hasNamedConstructor ? `${ p.name }: ` : '' }${ p.name } != null ? ${ p.name }() : this.${ p.name },\n`;
+            } else {
+                method += `    ${ clazz.hasNamedConstructor ? `${ p.name }: ` : '' }${ p.name } ?? this.${ p.name },\n`;
+            }
         }
 
         method += '  );\n'
         method += '}';
+
+        if (addImportForValueGetter) {
+            this.requiresImport('package:flutter/widgets.dart');
+        }
 
         this.appendOrReplace('copyWith', method, `${clazz.name} copyWith(`, clazz);
     }
