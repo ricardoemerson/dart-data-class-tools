@@ -1083,7 +1083,7 @@ class DataClassGenerator {
 
         for (let p of clazz.properties) {
             if (usesValueGetter && p.isNullable) {
-                method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} != null ? ${p.name}.call() : this.${p.name},\n`;
+                method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} != null ? ${p.name}() : this.${p.name},\n`;
             } else {
                 method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} ?? this.${p.name},\n`;
             }
