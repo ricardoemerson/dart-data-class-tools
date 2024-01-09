@@ -8,7 +8,61 @@
 
 Create dart data classes easily, fast and without writing boilerplate or running code generation.
 
-> This project was forked from BendixMa Dart Data Class Generator at version 0.5.5
+> This project was forked from ricardoemerson Dart Data Class Generator at version 0.7.0
+
+# Add Map extension
+
+```dart
+extension MapExt on Map {
+  int? getInt(String key) {
+    final value = this[key];
+    if (value is num) {
+      return value.toInt();
+    } else if (value is String) {
+      return double.tryParse(value)?.toInt();
+    } else if (value is bool) {
+      return value ? 1 : 0;
+    }
+    return null;
+  }
+
+  double? getDouble(String key) {
+    final value = this[key];
+    if (value is num) {
+      return value.toDouble();
+    } else if (value is String) {
+      return double.tryParse(value);
+    } else if (value is bool) {
+      return value ? 1 : 0;
+    }
+    return null;
+  }
+
+  String? getString(String key) {
+    final value = this[key];
+    if (value is String) {
+      return value;
+    } else if (value is num) {
+      return value.toString();
+    } else if (value is bool) {
+      return value ? "1" : "0";
+    }
+    return null;
+  }
+
+  bool? getBool(String key) {
+    final value = this[key];
+    if (value is String) {
+      return value == "1" || value == "true" || value == "True";
+    } else if (value is num) {
+      return value.toInt() == 1;
+    } else if (value is bool) {
+      return value;
+    }
+    return null;
+  }
+}
+```
 
 # What's new in Dart Data Class Generator 0.7.0 🎉
 

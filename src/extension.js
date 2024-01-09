@@ -392,7 +392,7 @@ class DartClass {
                     if (list.length == 0) return;
 
                     const length = list.length;
-                    classDeclaration += ` ${ keyword } `;
+                    classDeclaration += ` ${keyword} `;
 
                     for (let x = 0; x < length; x++) {
                         const isLast = x == length - 1;
@@ -1083,9 +1083,9 @@ class DataClassGenerator {
 
         for (let p of clazz.properties) {
             if (usesValueGetter && p.isNullable) {
-                method += `    ${ clazz.hasNamedConstructor ? `${ p.name }: ` : '' }${ p.name }?.call() ?? this.${ p.name },\n`;
+                method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name}?.call() ?? this.${p.name},\n`;
             } else {
-                method += `    ${ clazz.hasNamedConstructor ? `${ p.name }: ` : '' }${ p.name } ?? this.${ p.name },\n`;
+                method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} ?? this.${p.name},\n`;
             }
         }
 
@@ -1155,6 +1155,8 @@ class DataClassGenerator {
      * @param {DartClass} clazz
      */
     insertFromMap(clazz) {
+        this.requiresImport('package:gw_flutter_core/gw_core.dart');
+
         let withDefaultValues = readSetting('fromMap.default_values');
         let props = clazz.properties;
 
@@ -1164,8 +1166,16 @@ class DataClassGenerator {
         function customTypeMapping(prop, value = null) {
             prop = prop.isCollection ? prop.collectionType : prop;
             value = value == null ? "map['" + prop.key + "']" : value;
-
+            const defaultValue = !prop.isNullable ? ` ?? ${prop.defValue}` : '';
             switch (prop.type) {
+                case 'double':
+                    return `map.getDouble('${prop.key}')${defaultValue}`;
+                case 'int':
+                    return `map.getInt('${prop.key}')${defaultValue}`;
+                case 'bool':
+                    return `map.getBool('${prop.key}')${defaultValue}`;
+                case 'String':
+                    return `map.getString('${prop.key}')${defaultValue}`;
                 case 'DateTime':
                     return `DateTime.fromMillisecondsSinceEpoch(${value})`;
                 case 'Color':
@@ -1201,9 +1211,9 @@ class DataClassGenerator {
                 } else {
                     method += `${value}?.map((x) => ${customTypeMapping(p, 'x')})${defaultValue})`;
                 }
-            } else if (p.isPrimitive) {
-                const defaultValue = !p.isNullable ? ` ?? ${p.defValue}` : '';
-                method += `${value}${p.isDouble ? '?.toDouble()' : p.isInt ? '?.toInt()' : ''}${defaultValue}`;
+                // } else if (p.isPrimitive) {
+                //     const defaultValue = !p.isNullable ? ` ?? ${p.defValue}` : '';
+                //     method += `${value}${p.isDouble ? '?.toDouble()' : p.isInt ? '?.toInt()' : ''}${defaultValue}`;
             } else {
                 method += customTypeMapping(p);
             }
