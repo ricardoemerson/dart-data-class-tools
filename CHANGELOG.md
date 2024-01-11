@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.8.1
+
+- Revert the previous behavior.
+
 ## 0.8.0
 
 - Simplify use of ValueGetter using `x?.call() ?? this.x` instead `x != null ? x() : this.x`. Thanks to [Petr Nymsa](https://github.com/petrnymsa).
