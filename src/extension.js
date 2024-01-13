@@ -1183,7 +1183,7 @@ class DataClassGenerator {
             method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}`;
 
             const value = `map['${p.key}']`;
-            const addNullCheck = !p.isPrimitive && p.isNullable;
+            const addNullCheck = (p.isCollection || !p.isPrimitive) && p.isNullable;
 
             if (addNullCheck) {
                 method += `${value} != null ? `;
