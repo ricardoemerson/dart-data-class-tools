@@ -1083,7 +1083,7 @@ class DataClassGenerator {
 
         for (let p of clazz.properties) {
             if (usesValueGetter && p.isNullable) {
-                method += `    ${ clazz.hasNamedConstructor ? `${ p.name }: ` : '' }${ p.name } != null ? ${ p.name }() : this.${ p.name },\n`;
+                method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} != null ? ${p.name}() : this.${p.name},\n`;
             } else {
                 method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} ?? this.${p.name},\n`;
             }
@@ -1171,7 +1171,7 @@ class DataClassGenerator {
                 case 'double':
                     return `map.getDouble('${prop.key}')${defaultValue}`;
                 case 'int':
-                    return `map('${prop.key}')${defaultValue}`;
+                    return `map.getInt('${prop.key}')${defaultValue}`;
                 case 'bool':
                     return `map.getBool('${prop.key}')${defaultValue}`;
                 case 'String':
@@ -1618,7 +1618,7 @@ class DataClassGenerator {
                     const lineValid =
                         // Line shouldn't start with the class name as this would
                         // be the constructor or an error.
-                        !line.trimLeft().startsWith(clazz.name) &&
+                        // !line.trimLeft().startsWith(clazz.name) &&
                         // Ignore comments.
                         !line.trimLeft().startsWith('//') &&
                         // These symbols would indicate that this is not a field.

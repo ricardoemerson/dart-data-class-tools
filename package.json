@@ -3,7 +3,7 @@
 	"displayName": "DartJsonModel",
 	"description": "Create dart data classes easily, fast and without writing boilerplate or running code generation.",
 	"publisher": "MXCode",
-	"version": "0.8.0",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.65.0"
 	},
