@@ -1083,7 +1083,7 @@ class DataClassGenerator {
 
         for (let p of clazz.properties) {
             if (usesValueGetter && p.isNullable) {
-                method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name}?.call() ?? this.${p.name},\n`;
+                method += `    ${ clazz.hasNamedConstructor ? `${ p.name }: ` : '' }${ p.name } != null ? ${ p.name }() : this.${ p.name },\n`;
             } else {
                 method += `    ${clazz.hasNamedConstructor ? `${p.name}: ` : ''}${p.name} ?? this.${p.name},\n`;
             }
@@ -1171,7 +1171,7 @@ class DataClassGenerator {
                 case 'double':
                     return `map.getDouble('${prop.key}')${defaultValue}`;
                 case 'int':
-                    return `map.getInt('${prop.key}')${defaultValue}`;
+                    return `map('${prop.key}')${defaultValue}`;
                 case 'bool':
                     return `map.getBool('${prop.key}')${defaultValue}`;
                 case 'String':
