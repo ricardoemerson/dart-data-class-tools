@@ -25,7 +25,7 @@ The generator can generate the constructor, copyWith, toMap, fromMap, toJson, fr
 
 Additionally the generator has a couple of useful quick fixes to speed up your development process. See the [Additional Features Section](#additional-features) for more.
 
-If this extension is helpful to you, consider giving it a star on [GitHub](https://github.com/ricardoemerson/dart-data-class-generator) or leave a review on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-generator) :heart:
+If this extension is helpful to you, consider giving it a star on [GitHub](https://github.com/ricardoemerson/dart-data-class-generator) or leave a review on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-tools) :heart:
 
 ## Create Data Classes Based on Class Properties
 
